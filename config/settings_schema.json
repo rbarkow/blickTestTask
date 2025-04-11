@@ -253,7 +253,7 @@
         "id": "buttons_border_opacity",
         "min": 0,
         "max": 100,
-        "step": 5,
+        "step": 1,
         "unit": "%",
         "label": "t:settings_schema.global.settings.opacity.label",
         "default": 100
@@ -263,7 +263,7 @@
         "id": "buttons_radius",
         "min": 0,
         "max": 40,
-        "step": 2,
+        "step": 1,
         "unit": "px",
         "label": "t:settings_schema.global.settings.corner_radius.label",
         "default": 0
@@ -277,7 +277,7 @@
         "id": "buttons_shadow_opacity",
         "min": 0,
         "max": 100,
-        "step": 5,
+        "step": 1,
         "unit": "%",
         "label": "t:settings_schema.global.settings.opacity.label",
         "default": 0
@@ -287,7 +287,7 @@
         "id": "buttons_shadow_horizontal_offset",
         "min": -12,
         "max": 12,
-        "step": 2,
+        "step": 1,
         "unit": "px",
         "label": "t:settings_schema.global.settings.horizontal_offset.label",
         "default": 0
@@ -297,7 +297,7 @@
         "id": "buttons_shadow_vertical_offset",
         "min": -12,
         "max": 12,
-        "step": 2,
+        "step": 1,
         "unit": "px",
         "label": "t:settings_schema.global.settings.vertical_offset.label",
         "default": 0
@@ -307,7 +307,7 @@
         "id": "buttons_shadow_blur",
         "min": 0,
         "max": 20,
-        "step": 5,
+        "step": 1,
         "unit": "px",
         "label": "t:settings_schema.global.settings.blur.label",
         "default": 0
@@ -911,7 +911,7 @@
         "id": "text_boxes_border_opacity",
         "min": 0,
         "max": 100,
-        "step": 5,
+        "step": 1,
         "unit": "%",
         "label": "t:settings_schema.global.settings.opacity.label",
         "default": 0
@@ -921,7 +921,7 @@
         "id": "text_boxes_radius",
         "min": 0,
         "max": 40,
-        "step": 2,
+        "step": 1,
         "unit": "px",
         "label": "t:settings_schema.global.settings.corner_radius.label",
         "default": 0
@@ -935,7 +935,7 @@
         "id": "text_boxes_shadow_opacity",
         "min": 0,
         "max": 100,
-        "step": 5,
+        "step": 1,
         "unit": "%",
         "label": "t:settings_schema.global.settings.opacity.label",
         "default": 0
@@ -945,7 +945,7 @@
         "id": "text_boxes_shadow_horizontal_offset",
         "min": -40,
         "max": 40,
-        "step": 2,
+        "step": 1,
         "unit": "px",
         "label": "t:settings_schema.global.settings.horizontal_offset.label",
         "default": 0
@@ -955,7 +955,7 @@
         "id": "text_boxes_shadow_vertical_offset",
         "min": -40,
         "max": 40,
-        "step": 2,
+        "step": 1,
         "unit": "px",
         "label": "t:settings_schema.global.settings.vertical_offset.label",
         "default": 0
@@ -965,7 +965,7 @@
         "id": "text_boxes_shadow_blur",
         "min": 0,
         "max": 40,
-        "step": 5,
+        "step": 1,
         "unit": "px",
         "label": "t:settings_schema.global.settings.blur.label",
         "default": 0

@@ -1,0 +1,86 @@
+{% comment %}
+  Renders a product media gallery with slick carousel
+
+  Accepts:
+  - medias: {Array} Product medias
+
+  Usage:
+  {% render 'product-media-gallery' %}
+{% endcomment %}
+
+{{ 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' | stylesheet_tag }}
+{{ 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css' | stylesheet_tag }}
+{{ 'https://cdn.jsdelivr.net/npm/img-lightbox@0.2.7/css/img-lightbox.min.css' | stylesheet_tag }}
+
+<script src="{{ 'https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js' }}" defer></script>
+<script src="{{ 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js' }}" defer></script>
+<script src="{{ 'https://cdn.jsdelivr.net/npm/img-lightbox@0.2.7/js/img-lightbox.min.js' }}" defer></script>
+
+{{ 'snippets-blk-product-media-gallery.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'snippet-blk-product-media-gallery.js' | asset_url }}" defer="defer"></script>
+
+<div class="blk-gallery">
+
+  <div class="blk-slider-main-wrapper">
+    <div
+      class="blk-slider-main"
+    >
+      
+      {%- for media in medias -%}
+        <div class="blk-slider-main-item">
+          
+          <a href="{{ media | image_url }}"
+            class="js_lightbox blk-slider__zoom-button"
+            data-src="{{ media | image_url }}"
+            aria-hidden="true"
+            rel="lightbox"
+          >
+            {{ 'icon-search.svg' | inline_asset_content }}
+          </a>
+
+          <img
+            src="{{ media | image_url }}"
+            {% if block.media.alt != blank %}
+              alt="{{ media.alt | escape }}"
+            {% else %}
+              role="presentation"
+            {% endif %}
+            height="auto"
+            width="auto"
+            loading="lazy"
+          >
+        </div>
+      {%- endfor -%}
+    </div>
+    <div class="blk-slider__arrows">
+      <div class="blk-slider__arrows__arrow blk-slider__arrows__arrow--left">
+        {{ 'icon-caret.svg' | inline_asset_content }}
+      </div>
+      <div class="blk-slider__arrows__arrow blk-slider__arrows__arrow--right">
+        {{ 'icon-caret.svg' | inline_asset_content }}
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="blk-slider-nav"
+  >
+    
+    {%- for media in medias -%}
+      <div class="blk-slider-nav-item">
+
+        <img
+          src="{{ media | image_url }}"
+          {% if block.media.alt != blank %}
+            alt="{{ media.alt | escape }}"
+          {% else %}
+            role="presentation"
+          {% endif %}
+          height="100px"
+          width="100px"
+          loading="lazy"
+        >
+      </div>
+    {%- endfor -%}
+  </div>
+</div>

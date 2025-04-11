@@ -1930,6 +1930,9 @@
         }
       }
     },
+    "blk-product": {
+      "name": "BLK Productinformation",
+    },
     "main-product": {
       "name": "Product information",
       "blocks": {
@@ -2081,6 +2084,9 @@
               },
               "options__3": {
                 "label": "Banana"
+              },
+              "options__blk-badge": {
+                "label": "BLK Badge"
               },
               "options__4": {
                 "label": "Bottle"
@@ -3405,6 +3411,12 @@
       "presets": {
         "name": "Collapsible content"
       }
-    }
-  }
+    },
+    "blk-product-features": {
+      "name": "BLK Productfeatuers",
+      "icon_with_text": {
+          "name": "Icon with text",
+      }
+    },
+  },
 }
