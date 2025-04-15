@@ -1608,6 +1608,9 @@
         }
       }
     },
+    "blk-product": {
+      "name": "BLK Produkteigenschaften",
+    },
     "main-product": {
       "blocks": {
         "text": {
@@ -3405,6 +3408,12 @@
       "presets": {
         "name": "Schnelle Bestellliste"
       }
-    }
-  }
+    },
+    "blk-product-features": {
+      "name": "BLK Produktfeatures",
+      "icon_with_text": {
+          "name": "Icon mit Text",
+      }
+    },
+  },
 }

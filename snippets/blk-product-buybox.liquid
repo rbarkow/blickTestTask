@@ -1,0 +1,104 @@
+<div class="blk-product__buybox content-container {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        
+    <section class="product__info-container">
+      {%- assign product_form_id = 'product-form-' | append: section.id -%}
+
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'title' -%}
+            <h1 class="blk-product__title">{{ product.title | escape }}</h1>
+
+          {%- when 'productType' -%}
+            <h2 class="blk-product__subtitle">{{ product.type | escape }}</h2>
+
+          {%- when 'price' -%}
+            <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }} class="blk-product__price">
+              {%- render 'price',
+                product: product,
+                use_variant: true,
+                show_badges: false,
+                price_class: 'blk-product__price'
+              -%}
+              
+              {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
+                <span class="blk-product__tax">
+                  {%- if cart.duties_included and cart.taxes_included -%}
+                    {{ 'products.product.duties_and_taxes_included' | t }}
+                  {%- elsif cart.taxes_included -%}
+                    {{ 'products.product.taxes_included' | t }}
+                  {%- elsif cart.duties_included -%}
+                    {{ 'products.product.duties_included' | t }}
+                  {%- endif -%}
+                  {%- if shop.shipping_policy.body != blank -%}
+                    {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                  {%- endif -%}
+                </span>
+              {%- endif -%}
+            </div>
+
+            <div {{ block.shopify_attributes }}>
+              {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
+              {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
+                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                {{ form | payment_terms }}
+              {%- endform -%}
+            </div>
+
+          {%- when 'inventory' -%}
+            {% assign inventory_status_class = 'blk-product__inventory--grey' %}
+
+            {% capture inventory_status_text %}
+              {{- 'products.product.inventory_in_stock' | t -}}
+            {% endcapture %}
+
+            {%- if product.selected_or_first_available_variant.inventory_quantity > 0 -%}
+              {%- if product.selected_or_first_available_variant.inventory_quantity <= block.settings.inventory_threshold -%}
+                {% assign inventory_status_class = 'blk-product__inventory--orange' %}
+                {% capture inventory_status_text %}
+                  {{- 'products.product.inventory_low_stock' | t -}}
+                {% endcapture %}
+              {%- else -%}
+                {% assign inventory_status_class = 'blk-product__inventory--green' %}
+                {% capture inventory_status_text %}
+                  {{- 'products.product.inventory_in_stock' | t -}}
+                {% endcapture %}
+              {%- endif -%}
+            {%- else -%}
+
+              {% assign inventory_status_class = 'blk-product__inventory--grey' %}
+              
+              {%- if product.selected_or_first_available_variant.inventory_policy == 'continue' -%}
+                {% capture inventory_status_text %}
+                  {{- 'products.product.inventory_out_of_stock_continue_selling' | t -}}
+                {% endcapture %}
+              {%- else -%}
+                {% capture inventory_status_text %}
+                  {{- 'products.product.inventory_out_of_stock' | t -}}
+                {% endcapture %}
+              {%- endif -%}
+            {%- endif -%}
+
+            <span
+              class="blk-product__inventory {{ inventory_status_class }}"
+              {{ block.shopify_attributes }}
+              id="Inventory-{{ section.id }}"
+              role="status"
+            >
+              {%- if product.selected_or_first_available_variant.inventory_management == 'shopify' -%}
+                <span class="blk-product__inventory__indicator"></span>
+                {{ inventory_status_text }}
+              {%- endif -%}
+            </span>
+            
+          {%- when 'buy_buttons' -%}
+            {%- render 'buy-buttons',
+              block: block,
+              product: product,
+              product_form_id: product_form_id,
+              section_id: section.id,
+              show_pickup_availability: true
+            -%}
+        {%- endcase -%}
+      {%- endfor -%}
+    </section>
+  </div>

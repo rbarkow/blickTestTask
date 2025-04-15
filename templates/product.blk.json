@@ -1,0 +1,95 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "blk-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "product_type": {
+          "type": "productType",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "inventory": {
+          "type": "inventory",
+          "settings": {
+            "inventory_threshold": 10
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "product_type",
+        "price",
+        "inventory",
+        "buy_buttons"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 46
+      }
+    },
+    "blk_product_features": {
+      "type": "blk-product-features",
+      "blocks": {
+        "icon_with_text_1": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "blk-badge",
+            "title": "100% Qualität",
+            "text": "Dank weichem Silikon"
+          }
+        },
+        "icon_with_text_2": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "blk-badge",
+            "title": "100% Qualität",
+            "text": "Dank weichem Silikon"
+          }
+        },
+        "icon_with_text_3": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "blk-badge",
+            "title": "100% Qualität",
+            "text": "Dank weichem Silikon"
+          }
+        }
+      },
+      "block_order": [
+        "icon_with_text_1",
+        "icon_with_text_2",
+        "icon_with_text_3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "blk_product_features"
+  ]
+}

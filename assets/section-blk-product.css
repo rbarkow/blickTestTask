@@ -1,0 +1,138 @@
+.blk-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  line-height: normal;
+}
+
+.blk-product-page-width {
+  padding: 0 3rem;
+}
+
+.blk-product__gallery-wrapper {
+  width: 100dvw;
+}
+
+.blk-product__buybox {
+  width: 100%;
+}
+
+.blk-product__title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0 0 1.2rem 0;
+}
+
+.blk-product__subtitle {
+  font-size: 1.6rem;
+  font-weight: medium;
+  margin: 0 0 2rem 0;
+}
+
+
+.blk-product__inventory {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: medium;
+  margin-top: 1.8rem;
+  margin-bottom: 3.7rem;
+}
+
+.blk-product__inventory__indicator {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  margin-right: 1rem;
+}
+
+.blk-product__inventory--grey .blk-product__inventory__indicator {
+  background-color: grey;
+}
+
+.blk-product__inventory--green {
+  color: #25A525;
+}
+
+.blk-product__inventory--green .blk-product__inventory__indicator {
+  background-color: #25A525;
+}
+
+.blk-product__inventory--orange {
+  color: orange;
+}
+
+.blk-product__inventory--orange .blk-product__inventory__indicator {
+  background-color: orange;
+}
+
+.product__info-container {
+  padding: 1.8rem 2.3rem 2.5rem 2.8rem;
+}
+
+.blk-product__price {
+  display: flex;
+  align-items: baseline;
+  gap: .6rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.blk-product__price .price-item--regular {
+  font-size: inherit;
+}
+
+.blk-product__price .price-item--sale {
+  color: rgba(var(--color-button), var(--alpha-button-background));
+}
+
+.blk-product__tax {
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.product-form__buttons {
+  max-width: inherit;
+}
+
+.product-form__buttons .button {
+  height: 5.2rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.product-form__buttons .button:after {
+  display: none;
+}
+
+@media screen and (min-width: 750px) {
+  .blk-product  {
+    flex-direction: row;
+    gap: 5rem;
+  }
+
+  .blk-product-page-width {
+    padding: 0 3.75rem;
+  }
+  
+  .blk-product__gallery-wrapper  {
+    width: calc(100px + 480px + 20px);
+  }
+
+  .blk-product__buybox  {
+    flex-grow: 1;
+  }
+
+  .blk-product__title {
+    font-size: 2.5rem;
+  }
+  
+  .blk-product__subtitle, .blk-product__price, .product-form__buttons .button {
+    font-size: 1.8rem;
+  }
+  
+  .blk-product__inventory {
+    font-size: 1.5rem;
+  }
+}
